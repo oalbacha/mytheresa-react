@@ -1,0 +1,52 @@
+.favs {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.favs__title {
+}
+
+.favs__list {
+  display: grid;
+  grid-column: 2;
+  gap: 20px;
+}
+
+.fav {
+  list-style: none;
+}
+
+.fav__figure {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.fav__imgWrapper {
+  width: 200px;
+  height: 200px;
+}
+
+.fav__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.3rem;
+}
+
+.fav__figCap {
+  display: flex;
+  flex-direction: column;
+}
+
+.fav__title {
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.fav__date {
+}
+
+.fav__desc {
+  flex: 1;
+}

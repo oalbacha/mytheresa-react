@@ -1,0 +1,110 @@
+@import "../styles/base/reset";
+
+.carousel__container {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 4rem;
+  place-content: center;
+}
+
+.carousel__wrapper {
+  display: grid;
+  gap: calc($gap / 2);
+
+  header {
+    padding-inline: $gap;
+    display: grid;
+    gap: 1ex;
+
+    h2,
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.carousel__horizontal_media_scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: $size;
+  gap: calc($gap / 2);
+  padding-inline: $gap;
+  padding-block: calc($gap / 2);
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: $gap;
+  outline-offset: -5px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    outline-offset: calc($gap / 4);
+  }
+}
+
+.carousel__figure {
+  scroll-snap-align: start;
+
+  display: grid;
+  gap: calc($gap / 2);
+  margin: 0;
+
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  /*  container padding fix  */
+  &:last-child::after {
+    content: "";
+    position: absolute;
+    width: $gap;
+    height: 100%;
+    right: calc($gap * -1);
+    inline-size: $gap;
+    block-size: 100%;
+    inset-block-start: 0;
+    inset-block-end: calc($gap * -1);
+  }
+
+  > picture {
+    display: inline-block;
+    inline-size: $size;
+    block-size: $size;
+    border-radius: 1ex;
+    box-shadow: 0 1px 2px 0 hsl(0 0% 0% / 20%);
+    overflow: hidden;
+
+    > img {
+      display: block;
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      background-image: linear-gradient(
+        to bottom,
+        hsl(210 10% 40%),
+        hsl(210 10% 20%)
+      );
+    }
+  }
+
+  > figcaption {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+  }
+}
+
+.carousel__title {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+}
+
+.carousel__subtitle {
+  color: $text2;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+}

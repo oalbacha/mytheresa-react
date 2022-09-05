@@ -1,0 +1,59 @@
+@use "../styles/mixins.scss";
+
+.film {
+  @include mixins.variable(background, --theme-bg-color, blue);
+  @include mixins.variable(color, --theme-text-color, white);
+  @include mixins.variable(font-family, --theme-font, system-ui);
+  width: 50vw;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.film__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.film__poster_wrapper {
+  width: 300px;
+  height: 500px;
+}
+
+.film__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.film__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.film__header svg {
+  stroke: red;
+  width: 30px;
+  height: 30px;
+}
+
+.favourite_btn {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.favourite_btn svg {
+  stroke: red;
+  width: 30px;
+  height: 30px;
+}
+
+.genres {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
